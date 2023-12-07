@@ -70,9 +70,12 @@ pipeline {
 
       stage('Deploy to Tomcat') {
           steps {
-            def tomcatContainer = 'tomcat-manager'
-            sh "docker cp ${env.WORKSPACE}/target/demo-pipeline.war ${tomcatContainer}:/usr/local/tomcat/webapps/"
+              script {
+                def tomcatContainer = 'tomcat-manager'
+                sh "docker cp ${env.WORKSPACE}/target/demo-pipeline.war ${tomcatContainer}:/usr/local/tomcat/webapps/"
+                }
            }
        }
+       
     }
 }
