@@ -16,7 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<sonar.projectKey>demoPipeline</sonar.projectKey>
+		<sonar.projectKey>demoApi</sonar.projectKey>
 	</properties>
 	<dependencies>
 		<dependency>
