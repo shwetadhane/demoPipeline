@@ -68,10 +68,11 @@ pipeline {
             }
         }
 
-  //      stage('Deploy') {
-  //          steps {
-  //              sh 'java -jar target/demoApi-0.0.1-SNAPSHOT.jar'
-  //          }
-  //      }
+      stage('Deploy to Tomcat') {
+          steps {
+            def tomcatContainer = 'tomcat-manager'
+            sh "docker cp ${env.WORKSPACE}/target/demo-pipeline.war ${tomcatContainer}:/usr/local/tomcat/webapps/"
+           }
+       }
     }
 }
